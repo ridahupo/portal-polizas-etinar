@@ -79,7 +79,7 @@
         }
 
         .login-title {
-            font-family: 'DM Sans', sans-serif; font-weight: 700;
+            font-family: 'Crimson Pro', serif;
             font-size: 28px;
             font-weight: 700;
             color: var(--orchard-navy);
@@ -2226,7 +2226,11 @@
                 <div className="login-container">
                     <div className="login-card">
                         <div className="login-logo">
-                            <img src="orchard-logo.png" style="height: 60px; width: auto;" alt="Orchard Assistance">
+                            <svg width="80" height="80" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" fill="#2d5016" stroke="#2c3e50" strokeWidth="3"/>
+                                <path d="M50 20 Q30 30 30 45 Q30 55 35 60 Q40 65 45 65 Q48 65 50 63 Q52 65 55 65 Q60 65 65 60 Q70 55 70 45 Q70 30 50 20 Z" fill="white"/>
+                                <rect x="48" y="60" width="4" height="20" fill="white"/>
+                            </svg>
                         </div>
                         <h1 className="login-title">Portal de Pólizas</h1>
                         <p className="login-subtitle">Orchard Assistance S.A.</p>
@@ -2314,11 +2318,11 @@
             };
 
             const getStatusBadge = (diasRestantes) => {
-                if (diasRestantes <= 0) {
+                if (diasRestantes < 0) {
                     return <span className="status-badge vencida">
                         <span className="indicator red"></span> Vencida
                     </span>;
-                } else if (diasRestantes > 0 && diasRestantes <= 30) {
+                } else if (diasRestantes <= 30) {
                     return <span className="status-badge proxima">
                         <span className="indicator yellow"></span> Próxima
                     </span>;
